@@ -187,7 +187,7 @@ class TrackerBackendSpanExporter(BackendSpanExporter):
             # return
 
         # example
-        # [INFO][2025-05-13T17:37:51.120][openai.py:216] _undef||traceid=trace_9d030e991c224732a8c56043e90529d7||app=chuxing-assistant||env=dev||pod_ip=10.84.144.2||_msg={"object": "trace.span", "id": "span_d9f018c386654a98aa1a8d65", "trace_id": "trace_9d030e991c224732a8c56043e90529d7", "parent_id": "span_ed86fcb50f284b61b04f852d", "started_at": "2025-05-13T09:37:46.993053+00:00", "ended_at": "2025-05-13T09:37:46.993707+00:00", "span_data": {"type": "handoff", "from_agent": "llab_agent", "to_agent": "chatbot_agent"}, "error": null}
+        # [INFO][2025-05-13T17:37:51.120][openai.py:216] _undef||traceid=trace_9d030e991c224732a8c56043e90529d7||app=xxx-assistant||env=dev||pod_ip=1.2.3.4||_msg={"object": "trace.span", "id": "span_d9f018c386654a98aa1a8d65", "trace_id": "trace_9d030e991c224732a8c56043e90529d7", "parent_id": "span_ed86fcb50f284b61b04f852d", "started_at": "2025-05-13T09:37:46.993053+00:00", "ended_at": "2025-05-13T09:37:46.993707+00:00", "span_data": {"type": "handoff", "from_agent": "llab_agent", "to_agent": "chatbot_agent"}, "error": null}
 
         tracker_handler = TrackerLogHandler()
         _logger.addHandler(tracker_handler)
