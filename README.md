@@ -39,5 +39,10 @@ with trace(
 
 3. 查看追踪数据
 
-可以仿照OpenAI platform traces的界面，实现自己的前端展示效果
+需要自行实现，可以仿照OpenAI platform traces的界面，实现自己的前端展示效果，示例效果如下：
 
+![trace列表](tracker2k_p1.png)
+
+![trace详情](tracker2k_p2.png)
+
+![trace详情](tracker2k_p3.png)
