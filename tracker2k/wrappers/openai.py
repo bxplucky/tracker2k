@@ -93,7 +93,7 @@ class Logger(object):
     def __init__(self, log_path, app_name="noapp", env_name="noenv", level='info', when='D', back_count=3,
                  fmt='[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d] %(dltag)s||traceid=%(trace_id)s||app=%(app_name)s||env=%(env_name)s||pod_ip=%(local_ip)s||_msg=%(message)s'):
         if not os.path.exists(log_path):
-            os.makedirs(log_path)
+            os.makedirs(log_path, exist_ok=True)
         filename = log_path + "default.log"
         self.log_path = log_path
         self.logger = logging.getLogger(filename)
