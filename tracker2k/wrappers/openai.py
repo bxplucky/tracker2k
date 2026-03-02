@@ -160,6 +160,16 @@ class TrackerBatchTraceProcessor(BatchTraceProcessor):
         super().__init__(exporter, max_queue_size, max_batch_size, schedule_delay, export_trigger_ratio)
 
 
+    def on_trace_start(self, trace: Trace) -> None:
+        obj = trace.export()
+        if obj is not None and "metadata" in obj and obj["metadata"] is not None and len(obj["metadata"]) > 0:
+            for key, value in obj["metadata"].items():
+                if key == "no_op_trace" and value:
+                    return
+
+        super().on_trace_start(trace)
+
+
 class TrackerBackendSpanExporter(BackendSpanExporter):
 
     def __init__(

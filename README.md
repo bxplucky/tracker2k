@@ -26,13 +26,13 @@ tracker2k.init(app_name="travel-assistant", env_name="dev", endpoint="https://xx
 
 # 注：
 #   1 trace_id 对应链路的trace_id
-#   2. metadata中的query和uid，对应用户请求query和用户id
+#   2. metadata中的query、uid、sid，对应用户请求query、用户id、会话id
 
 with trace(
         workflow_name=f"LPY Agent ({session_id})",
         group_id=f'Lpy Agent',
         trace_id=trace_id,
-        metadata={"query": query, "uid": uid}
+        metadata={"query": query, "uid": uid, "sid": session_id}
     ):
     ...your code...
 ```
